@@ -73,6 +73,7 @@ extern NSString *const kSSKeychainWhereKey;
  */
 + (NSString *)passwordForService:(NSString *)serviceName account:(NSString *)account;
 + (NSString *)passwordForService:(NSString *)serviceName account:(NSString *)account error:(NSError **)error;
++ (NSString *)passwordForService:(NSString *)serviceName account:(NSString *)account accessGroup:(NSString *)accessGroup error:(NSError **)error;
 
 
 /**
@@ -86,7 +87,7 @@ extern NSString *const kSSKeychainWhereKey;
  */
 + (BOOL)deletePasswordForService:(NSString *)serviceName account:(NSString *)account;
 + (BOOL)deletePasswordForService:(NSString *)serviceName account:(NSString *)account error:(NSError **)error;
-
++ (BOOL)deletePasswordForService:(NSString *)serviceName account:(NSString *)account accessGroup:(NSString *)accessGroup error:(NSError **)error;
 
 /**
  Sets a password in the Keychain.
@@ -101,6 +102,7 @@ extern NSString *const kSSKeychainWhereKey;
  */
 + (BOOL)setPassword:(NSString *)password forService:(NSString *)serviceName account:(NSString *)account;
 + (BOOL)setPassword:(NSString *)password forService:(NSString *)serviceName account:(NSString *)account error:(NSError **)error;
++ (BOOL)setPassword:(NSString *)password forService:(NSString *)serviceName account:(NSString *)account accessGroup:(NSString *)accessGroup error:(NSError **)error;
 
 
 /**
@@ -128,7 +130,7 @@ extern NSString *const kSSKeychainWhereKey;
  doesn't have any accounts for the given `serviceName`. The order of the objects in the array isn't defined.
  */
 + (NSArray *)accountsForService:(NSString *)serviceName;
-
++ (NSArray *)accountsForService:(NSString *)serviceName accessGroup:(NSString *)accessGroup;
 
 #pragma mark - Configuration
 
